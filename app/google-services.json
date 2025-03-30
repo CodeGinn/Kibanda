@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "854657507626",
+    "project_id": "kibanda-87f01",
+    "storage_bucket": "kibanda-87f01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854657507626:android:77541d85ff7fe93868be53",
+        "android_client_info": {
+          "package_name": "com.codeginn.kibanda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBA4IM0TEawbMJ7s-q3FYKcvfm5ymc8sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
