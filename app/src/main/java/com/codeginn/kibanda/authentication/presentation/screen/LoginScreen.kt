@@ -95,7 +95,7 @@ fun LoginScreen(
                     label = {
                         Text("Password")
                     },
-                    visualTransformation = when(passwordVisible){
+                    visualTransformation = when(!passwordVisible){
                         true -> PasswordVisualTransformation()
                         false -> VisualTransformation.None
                     },

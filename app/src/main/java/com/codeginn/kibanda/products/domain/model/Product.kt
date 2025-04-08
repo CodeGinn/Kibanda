@@ -8,7 +8,7 @@ data class Product(
     val productName: String = "",
     val productUnit: String = "",
     val productUnitPrice: Int = 0,
-    val productQuantity: Int = 0,
+    val productQuantity: Int = 1,
     val productAvailability: Boolean = true,
     val productImage: String = ""
 )

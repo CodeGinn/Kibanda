@@ -25,12 +25,14 @@ import androidx.navigation.toRoute
 import com.codeginn.kibanda.account.presentation.screen.tab.AccountTab
 import com.codeginn.kibanda.authentication.presentation.screen.LoginScreen
 import com.codeginn.kibanda.authentication.presentation.screen.SignupScreen
-import com.codeginn.kibanda.cartcheckout.presentation.presentation.tab.CartTab
+import com.codeginn.kibanda.cartcheckout.presentation.screen.tab.CartTab
+import com.codeginn.kibanda.mpesa.presentation.screen.MpesaScreen
 import com.codeginn.kibanda.navigation.authnav.Login
 import com.codeginn.kibanda.navigation.authnav.Signup
 import com.codeginn.kibanda.navigation.bottomtabnav.BottomDestination
 import com.codeginn.kibanda.navigation.bottomtabnav.bottomTabItems
 import com.codeginn.kibanda.navigation.mainscreennav.CustomNavType
+import com.codeginn.kibanda.navigation.mainscreennav.MpesaScreen
 import com.codeginn.kibanda.navigation.mainscreennav.ProductDetails
 import com.codeginn.kibanda.navigation.mainscreennav.SearchScreen
 import com.codeginn.kibanda.navigation.postroutes.PostsPage
@@ -106,13 +108,21 @@ fun KibandaApp(
                     onProductCardClicked = {product ->
                         kibandaNavController.navigate(ProductDetails(product))
                     },
-                    onSearch = {
-                        kibandaNavController.navigate(SearchScreen)
+                    onSearch = {searchProduct ->
+                        kibandaNavController.navigate(SearchScreen(searchProduct))
                     }
                 )
             }
             composable(BottomDestination.Cart.name) {
-                CartTab()
+                CartTab(
+                    onCheckOut = {
+                        kibandaNavController.navigate(MpesaScreen){
+                            popUpTo(BottomDestination.Cart.name){
+                                inclusive = true
+                            }
+                        }
+                    }
+                )
             }
             composable(BottomDestination.Orders.name) {
                 OrdersTab()
@@ -124,11 +134,25 @@ fun KibandaApp(
                     }
                 )
             }
-            composable<SearchScreen> {
-                SearchResultsScreen()
+            composable<SearchScreen>(
+                typeMap = mapOf(
+                    typeOf<Product>() to CustomNavType.ProductType
+                )
+            ) {
+                val searchArgs = it.toRoute<SearchScreen>()
+                SearchResultsScreen(
+                    product = searchArgs.searchProduct
+                )
             }
             composable<PostsPage>{
                 PostsScreen()
+            }
+            composable<MpesaScreen>{
+                MpesaScreen(
+                    navigateToOrderScreen = {
+                        kibandaNavController.navigate(BottomDestination.Orders.name)
+                    }
+                )
             }
         }
 

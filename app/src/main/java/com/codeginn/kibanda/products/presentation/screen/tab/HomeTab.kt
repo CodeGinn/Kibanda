@@ -55,7 +55,7 @@ import org.koin.androidx.compose.koinViewModel
 fun HomeTab(
     modifier: Modifier = Modifier,
     onProductCardClicked: (Product) -> Unit = {},
-    onSearch: () -> Unit = {}
+    onSearch: (Product) -> Unit = {}
 ){
     Scaffold(
         modifier.fillMaxSize(),
@@ -143,9 +143,7 @@ fun HomeTopBar(
                 )
                 OutlinedTextField(
                     value = searchText,
-                    onValueChange =
-                        searchViewModel::onSearchTextChange,
-
+                    onValueChange = searchViewModel::onSearchTextChange,
                     shape = RoundedCornerShape(12.dp),
                     placeholder = {
                     Text(

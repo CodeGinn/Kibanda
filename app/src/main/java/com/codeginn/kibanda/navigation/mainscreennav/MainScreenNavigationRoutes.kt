@@ -8,4 +8,10 @@ import kotlinx.serialization.Serializable
     val product: Product
 )
 
-@Serializable object SearchScreen
+@Serializable data class SearchScreen(
+    val searchProduct: Product
+)
+
+@Serializable object MpesaScreen
+
+//@Serializable object OrderHistory

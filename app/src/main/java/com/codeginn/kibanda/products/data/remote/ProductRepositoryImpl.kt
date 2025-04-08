@@ -1,6 +1,5 @@
 package com.codeginn.kibanda.products.data.remote
 
-import android.R.attr.category
 import android.util.Log
 import com.codeginn.kibanda.products.domain.model.Product
 import com.codeginn.kibanda.products.domain.repository.ProductRepository
@@ -19,29 +18,23 @@ class ProductRepositoryImpl(
     val vegetablesCollectionRef = productDB.collection("vegetables")
 
     override fun searchProducts(query: String): Flow<List<Product>> = flow{
-        val fruits = searchCollection("fruits", query)
-        val vegetables = searchCollection("vegetables", query)
+        try {
+            val vegetablesSnapshot = vegetablesCollectionRef.orderBy("productName")
+                .startAt(query).endAt(query + "\uf8ff").get().await()
+            val fruitsSnapshot = fruitsCollectionRef.orderBy("productName")
+                .startAt(query).endAt(query + "\uf8ff").get().await()
 
-        emit(fruits + vegetables)
-    }
+            val searchProducts = vegetablesSnapshot.toObjects(Product::class.java) +
+                    fruitsSnapshot.toObjects(Product::class.java)
 
-    private suspend fun searchCollection(collectionName: String, query: String): List<Product> {
-        return try {
-            val snapshot = productDB.collection(collectionName)
-                .whereGreaterThanOrEqualTo("productName", query)
-                .whereLessThan("productName", query + "\uf8ff") // Prefix matching
-                .get()
-                .await()
-            snapshot.documents.mapNotNull { document ->
-                document.toObject(Product::class.java)?.apply {
-                    this.productID = document.id
-                }
-            }
-        } catch (e: Exception) {
-            // Handle error appropriately (e.g., log it)
-            Log.d("Search Result", "Error: $e")
-            emptyList()
+            emit(searchProducts)
+        } catch (e: Exception){
+            e.printStackTrace()
+            emit(emptyList())
         }
+
+
+
     }
 
     override fun getAllFruits(): Flow<List<Product>> {

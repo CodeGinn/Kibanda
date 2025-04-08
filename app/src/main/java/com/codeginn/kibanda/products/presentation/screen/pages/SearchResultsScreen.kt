@@ -23,7 +23,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun SearchResultsScreen(
     modifier: Modifier = Modifier,
-    product: Product = Product(),
+    product: Product,
     searchViewModel: SearchViewModel = koinViewModel<SearchViewModel>()
 ){
     val searchResults by searchViewModel.searchResults.collectAsState()

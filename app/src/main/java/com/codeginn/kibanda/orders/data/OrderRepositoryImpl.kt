@@ -66,6 +66,7 @@ class OrderRepositoryImpl(
         try {
             ordersCollection.document(orderId).update("deliveryStatus", newStatus).await()
         } catch (e: Exception) {
+            e.printStackTrace()
             // Handle error
         }
     }
