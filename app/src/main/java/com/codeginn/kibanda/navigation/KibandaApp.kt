@@ -34,7 +34,6 @@ import com.codeginn.kibanda.navigation.bottomtabnav.bottomTabItems
 import com.codeginn.kibanda.navigation.mainscreennav.CustomNavType
 import com.codeginn.kibanda.navigation.mainscreennav.MpesaScreen
 import com.codeginn.kibanda.navigation.mainscreennav.ProductDetails
-import com.codeginn.kibanda.navigation.mainscreennav.SearchScreen
 import com.codeginn.kibanda.navigation.postroutes.PostsPage
 import com.codeginn.kibanda.orders.presentation.screen.tab.OrdersTab
 import com.codeginn.kibanda.posts.presentation.screen.PostsScreen
