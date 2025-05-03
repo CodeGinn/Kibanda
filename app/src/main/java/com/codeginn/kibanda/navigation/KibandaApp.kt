@@ -52,6 +52,7 @@ fun KibandaApp(
 
     val listOfBottomTabNavigation = listOf(
         BottomDestination.Home.name,
+        BottomDestination.Search.name,
         BottomDestination.Cart.name,
         BottomDestination.Orders.name,
         BottomDestination.Account.name
@@ -107,9 +108,6 @@ fun KibandaApp(
                 HomeTab(
                     onProductCardClicked = {product ->
                         kibandaNavController.navigate(ProductDetails(product))
-                    },
-                    onSearch = {searchProduct ->
-                        kibandaNavController.navigate(SearchScreen(searchProduct))
                     }
                 )
             }
@@ -134,15 +132,8 @@ fun KibandaApp(
                     }
                 )
             }
-            composable<SearchScreen>(
-                typeMap = mapOf(
-                    typeOf<Product>() to CustomNavType.ProductType
-                )
-            ) {
-                val searchArgs = it.toRoute<SearchScreen>()
-                SearchResultsScreen(
-                    product = searchArgs.searchProduct
-                )
+            composable(BottomDestination.Search.name) {
+                SearchResultsScreen()
             }
             composable<PostsPage>{
                 PostsScreen()

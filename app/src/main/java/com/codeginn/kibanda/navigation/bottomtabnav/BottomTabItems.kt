@@ -5,9 +5,11 @@ import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.automirrored.outlined.List
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.ShoppingCart
 import com.codeginn.kibanda.R
 
@@ -17,6 +19,12 @@ val bottomTabItems = listOf<BottomTabItem>(
         tabDestination = BottomDestination.Home.name,
         selectedIcon = Icons.Filled.Home,
         unselectedIcon = Icons.Outlined.Home,
+    ),
+    BottomTabItem(
+        tabLabel = R.string.search,
+        tabDestination = BottomDestination.Search.name,
+        selectedIcon = Icons.Filled.Search,
+        unselectedIcon = Icons.Outlined.Search,
     ),
     BottomTabItem(
         tabLabel = R.string.cart,

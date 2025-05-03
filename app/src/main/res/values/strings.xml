@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Kibanda</string>
     <string name="home">Home</string>
+    <string name="search">Search</string>
     <string name="cart">Cart</string>
     <string name="orders">Orders</string>
     <string name="account">Account</string>
