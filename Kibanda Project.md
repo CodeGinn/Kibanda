@@ -38,12 +38,12 @@ You can add screenshots or GIFs of your app interface like this:
 ![Home Screen](https://your-image-link.com/home_screen.png)
 
 ### 🛒 Cart View  
-![Cart Screen](screenshots/cart_screen.png)
+![Cart Screen]
+<img src="screenshots/cart_screen.png" alt="Cart View" style="width: 45%; border-radius: 8px;"/>
 
 ### 💳 MPesa Payment Flow  
 ![MPesa Payment](https://your-image-link.com/mpesa_flow.gif)
 
-> ✅ Upload your images to platforms like [Imgur](https://imgur.com), [GitHub Issues](https://github.com/yourrepo/issues), or use relative paths like `/screenshots/home.png` if they are in your repo.
 
 ---
 
