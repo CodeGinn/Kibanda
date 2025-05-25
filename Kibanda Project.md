@@ -2,8 +2,7 @@
 
 **Kibanda** is a native Android grocery shopping app designed for Kenyan users, built with **Kotlin**, **Jetpack Compose**, **Koin**, **Firebase**, and **MPesa** integration. It provides a seamless, secure and beautiful shopping experience for groceries such as fruits and vegetables directly from your Android mobile device.
 
-![Kibanda Logo]
-<img src="screenshots/splash_screen.png" alt="Splash Screen" width="300" height="400"/>
+<img src="screenshots/splash_screen.png" alt="Splash Screen" width="300"/>
 
 ---
 
@@ -31,18 +30,17 @@
 
 ---
 
-## 📷 App Screenshots
+## 📷 App Screens
 
 ### 🏠 Home Screen  
-![Home Screen]
 <img src="screenshots/home_screen.png" alt="Home Screen" width="300"/>
 
 ### 🛒 Cart View  
-![Cart Screen]
+
 <img src="screenshots/cart_screen.png" alt="Cart View" style="width: 45%; border-radius: 8px;"/>
 
 ### 💳 MPesa Payment Flow  
-![MPesa Payment]
+
 <img src="screenshots/checkout_screen.png" alt="Checkout Screen" width="300"/>
 
 
