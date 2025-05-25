@@ -95,7 +95,7 @@ Want to contribute to Kibanda?
 
 ## 📧 Contact
 
-**Developer:** Stanley Kienji  
+**Developer:** Stanley Mwangi  
 📩 Email: [kienji254@gmail.com](mailto:kienji254@gmail.com)  
 📱 Phone: +254 719 323117  
 🌍 Location: Kenya  
@@ -108,4 +108,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-> **Kibanda** – Bringing the market to your pocket 🇰🇪🛒
+> **Kibanda** – Bringing the market to your pocket🛒
