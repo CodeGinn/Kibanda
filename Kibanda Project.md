@@ -38,7 +38,7 @@ You can add screenshots or GIFs of your app interface like this:
 ![Home Screen](https://your-image-link.com/home_screen.png)
 
 ### 🛒 Cart View  
-![Cart Screen](https://your-image-link.com/cart_screen.png)
+![Cart Screen](screenshots/cart_screen.png)
 
 ### 💳 MPesa Payment Flow  
 ![MPesa Payment](https://your-image-link.com/mpesa_flow.gif)
