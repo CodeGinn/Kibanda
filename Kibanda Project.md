@@ -35,7 +35,8 @@
 You can add screenshots or GIFs of your app interface like this:
 
 ### 🏠 Home Screen  
-![Home Screen](https://your-image-link.com/home_screen.png)
+![Home Screen]
+<img src="screenshots/home_screen.png" alt="Home Screen" width="300"/>
 
 ### 🛒 Cart View  
 ![Cart Screen]
